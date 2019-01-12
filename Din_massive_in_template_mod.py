@@ -48,9 +48,9 @@ class DynArray:
                     else:
                         new_array[j]=self.array[j]
                 self.array=new_array
-                print("вставка в конец")
+               # print("вставка в конец")
             else:
-                print("вставка в центр")
+                #print("вставка в центр")
                 for j in range(self.count+1):
                     if (i!=self.count) and (i==j):
                         new_array[j]=itm
@@ -68,12 +68,12 @@ class DynArray:
         else:
             if (2*(self.count-1))<=self.capacity and self.capacity>16:
                 new_capacity=int(self.capacity/2)
-                print("Уменьшили в 2 раза")
+               # print("Уменьшили в 2 раза")
             elif (2*(self.count-1))>self.capacity and self.capacity>16:
                 new_capacity=self.capacity 
-                print("Оставили как есть")   
+                #print("Оставили как есть")   
             else:
-                print("Сделали 16")
+               # print("Сделали 16")
                 new_capacity=16
             new_array=self.make_array(new_capacity)
             for j in range(self.count-1):
@@ -85,20 +85,3 @@ class DynArray:
         self.count-=1
         self.array=new_array
         self.resize(new_capacity)
-
-
-
-
-da=DynArray()
-for i in range(5):
-    da.append(i)
-    print(da[i])
-print("####")
-da.insert(1,11)
-print(len(da))
-for i in range(len(da)):
-    print(da[i])
-da.delete(0)
-print("@@@@@@@")
-for i in range(len(da)):
-    print(da[i])
