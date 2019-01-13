@@ -60,13 +60,15 @@ class DynArray:
                     new_array[j]=self.array[j]
                 self.array=new_array
         self.count+=1
+        #print("self.capacity",self.capacity)
+        #print("self.count",self.count)
     
     def delete(self, i):
         # удаляем объект в позиции i
         if i < 0 or i >= (self.count):
             raise IndexError('Index is out of bounds')
         else:
-            if (2*(self.count-1))<=self.capacity and self.capacity>16:
+            if (2*(self.count-1))<self.capacity and (self.capacity)>16:
                 new_capacity=int(self.capacity/2)
                # print("Уменьшили в 2 раза")
             elif (2*(self.count-1))>self.capacity and self.capacity>16:
@@ -85,3 +87,9 @@ class DynArray:
         self.count-=1
         self.array=new_array
         self.resize(new_capacity)
+        #print("self.capacity",self.capacity)
+        #print("self.count",self.count)
+
+
+
+
