@@ -65,7 +65,7 @@ class DynArray:
     
     def delete(self, i):
         # удаляем объект в позиции i
-        if i < 0 or i >(self.count):
+        if i < 0 or i >=(self.count):
             raise IndexError('Index is out of bounds')
         else:
             if (2*(self.count-1))<self.capacity and (self.capacity)>16:
@@ -95,9 +95,10 @@ class DynArray:
 #dy = DynArray()
 
 #for t in range(1000):
-#    dy.insert(dy.count,t)
-    #print(dy.capacity,dy.count)
+ #   dy.insert(dy.count,t)
+ #   print(dy.capacity,dy.count)
 #print("$$$$")
+#dy.delete(dy.count)
 #try:
 #    for i in range(1001): 
 #        dy.delete(dy.count-1)
